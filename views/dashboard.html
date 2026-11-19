@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanz · Dashboard</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand-row">
+        <div class="brand">V</div>
+        <div>
+            <h2>Vanz License</h2>
+            <div class="sub">Dashboard pribadi</div>
+        </div>
+    </div>
+    <form method="POST" action="/logout"><button class="btn btn-outline btn-sm" type="submit">Keluar</button></form>
+</div>
+
+<div class="container">
+
+    __FLASH_BLOCK__
+
+    <div class="stat-grid">
+        <div class="stat-card"><div class="label">Total License</div><div class="value">__STAT_TOTAL__</div></div>
+        <div class="stat-card"><div class="label">Aktif</div><div class="value">__STAT_ACTIVE__</div></div>
+        <div class="stat-card"><div class="label">Expired</div><div class="value">__STAT_EXPIRED__</div></div>
+        <div class="stat-card"><div class="label">Direvoke</div><div class="value">__STAT_REVOKED__</div></div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-head"><h3>🪄 Generate License Manual</h3></div>
+        <form class="gen-form" method="POST" action="/dashboard/generate">
+            <div class="field">
+                <label>Nama Buyer</label>
+                <input type="text" name="buyer" placeholder="cth: Budi Santoso" required>
+            </div>
+            <div class="field">
+                <label>Produk</label>
+                <input type="text" name="product" placeholder="cth: Script FULL UPDATE" required>
+            </div>
+            <div class="field">
+                <label>Durasi (hari)</label>
+                <input type="number" name="durationDays" value="30" min="1" required>
+            </div>
+            <button class="btn" type="submit">Generate</button>
+        </form>
+    </div>
+
+    <div class="panel">
+        <div class="panel-head">
+            <h3>📋 Daftar License (__STAT_TOTAL__)</h3>
+        </div>
+        __TABLE_BLOCK__
+    </div>
+
+</div>
+
+<footer>Vanz License · dashboard pribadi, jangan dibagikan ke siapa pun</footer>
+</body>
+</html>
