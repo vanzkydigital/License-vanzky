@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanz · Masuk</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="login-wrap">
+    <div class="login-card">
+        <div class="brand">V</div>
+        <h1>Selamat Datang di Vanz</h1>
+        <p>Masukkan kunci rahasia untuk melanjutkan</p>
+
+        __ERROR_BLOCK__
+
+        <form method="POST" action="/login">
+            <div class="field">
+                <label for="secret">Kunci Rahasia</label>
+                <input type="password" id="secret" name="secret" placeholder="••••••••••••" autofocus required>
+            </div>
+            <button class="btn" type="submit">Masuk ke Dashboard</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
